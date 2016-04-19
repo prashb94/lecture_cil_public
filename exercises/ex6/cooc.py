@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from scipy.sparse import *
+from scipy.sparse import *    # this script needs scipy >= v0.15
 import numpy as np
 import pickle
 
