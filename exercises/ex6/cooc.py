@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from scipy.sparse import * # needs scipy >= 0.15
+from scipy.sparse import *    # this script needs scipy >= v0.15
 import numpy as np
 import pickle
 
@@ -11,7 +11,7 @@ def main():
 
     data, row, col = [], [], []
     counter = 1
-    for fn in ['pos_train.txt', 'neg_train.txt']:
+    for fn in ['train_pos.txt', 'train_neg.txt']:
         with open(fn) as f:
             for line in f:
                 tokens = [vocab.get(t, -1) for t in line.strip().split()]
