@@ -27,10 +27,10 @@ y_hat = ...
 
 # define the (stochastic!) loss
 loss = ...
-tf.scalar_summary('loss', loss)  # attention: this is the stochastic loss, i.e. it will be noisy
+tf.scalar_summary('log loss', tf.log(1.0 + loss))  # attention: this is the stochastic loss, i.e. it will be noisy
 
 # define the optimizer
-step_size = 1.0
+step_size = 0.1
 optimizer = tf.train.GradientDescentOptimizer(step_size)
 train_op = optimizer.minimize(loss)
 

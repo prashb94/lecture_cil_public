@@ -22,10 +22,10 @@ y_hat = ...
 
 # define the loss
 loss = ...
-tf.scalar_summary('loss', loss)
+tf.scalar_summary('log loss', tf.log(1.0 + loss))
 
 # define the optimizer
-step_size = 1.0
+step_size = 0.1
 optimizer = tf.train.GradientDescentOptimizer(step_size)
 train_op = optimizer.minimize(loss)
 
